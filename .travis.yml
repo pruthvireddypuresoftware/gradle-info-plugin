@@ -3,8 +3,11 @@ sudo: false
 matrix:
   include:
     - jdk: openjdk8
-      env: GRADLE_PUBLISH=true
+      env: GRADLE_PUBLISH=false
     - jdk: openjdk11
+      env: GRADLE_PUBLISH=false
+    - arch: arm64
+      jdk: openjdk8
       env: GRADLE_PUBLISH=false
 install: true
 script: "./gradle/buildViaTravis.sh"
